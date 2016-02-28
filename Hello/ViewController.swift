@@ -10,16 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var greetingTextBox: UILabel!
     override func viewDidLoad() {
+        
+        // initalized text
+        greetingTextBox.text = "Hello Jake"
+        
+        // set background color
+        self.view.backgroundColor = UIColor.redColor()
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+   
+    @IBAction func addExclamationMark(sender: AnyObject) {
+        // append an exclamation mark to the end of the textbox with each press
+        greetingTextBox.text?.appendContentsOf("!")
     }
-
 
 }
 
